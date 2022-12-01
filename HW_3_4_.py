@@ -1,16 +1,13 @@
-def open_browser():
-    browser_name = 'Open Browser Chrome'
-    return browser_name
-print(open_browser())
+def funcs(main, *args):
+    main = main.__name__.replace('_', ' ').upper() + ':'
+    print (main, *args)
+def open_browser(browser_name):
+    funcs(open_browser, browser_name)
+def go_to_companyname_homepage(page_url):
+    funcs(go_to_companyname_homepage,page_url)
+def find_registration_button_on_login_page(page_url, button_text):
+    funcs(find_registration_button_on_login_page,page_url,button_text)
 
-def go_to_companyname_homepage():
-    page_url = 'Go To Companyname Homepage Google.com'
-    return page_url
-print(go_to_companyname_homepage())
-
-def find_registration_button_on_login_page():
-    page_url = 'Find Registration Button On Login Page Google.com'
-    button_text = 'Login'
-    return page_url + ' --> ' + button_text
-print(find_registration_button_on_login_page())
-
+open_browser("Chrome")
+go_to_companyname_homepage("https:/google.com")
+find_registration_button_on_login_page("URL", "Login")
